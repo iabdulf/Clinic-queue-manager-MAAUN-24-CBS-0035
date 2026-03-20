@@ -1,8 +1,9 @@
-class Business:
-    def __init__(self, name, category, location):
-        self.name = name
-        self.category = category
-        self.location = location
+from datetime import datetime
 
-    def get_info(self):
-        return f"{self.name} - {self.category} ({self.location})"
+class Patient:
+    def __init__(self, name):
+        self.name = name
+        self.time_registered = datetime.now()
+
+    def get_details(self):
+        return f"{self.name} - {self.time_registered.strftime('%H:%M:%S')}"
